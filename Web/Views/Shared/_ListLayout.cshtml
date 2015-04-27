@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 列表应用程序</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/kendoUI")
+
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="myController">
+            <div>
+                <button class="btn btn-default" ng-click="add()">新增</button>
+            </div>
+            <div class="search">
+                @RenderSection("searchs", required: false)
+            </div>
+            
+            <div>
+                @RenderSection("lists", required: true)
+            </div>            
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/kendoUI")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

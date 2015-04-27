@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "/Views/Shared/_ListLayout.cshtml";
+}
+
+
+@section lists{
+
+    <table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+        </tr>
+    </thead>
+        <tr ng-repeat="detail in viewModel" ng-click="rowClick(detail)">
+            <td>
+                {{detail.UserName}}
+            </td>
+            <td>
+                {{detail.PassWord}}
+            </td>
+        </tr>
+</table>
+}
+
+@section scripts{
+    <script type="text/javascript" src="~/Areas/Test/Scripts/test/test-service.js"></script>
+    <script type="text/javascript" src="~/Areas/Test/Scripts/test/test-list.js"></script>
+}
+
